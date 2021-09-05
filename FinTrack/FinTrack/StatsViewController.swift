@@ -13,22 +13,36 @@ class StatsViewController: UIViewController {
     
     @IBOutlet var textView: UITextView!
     
-    
+    var finalOutput: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.text.append(amountToReceive) // don't need this???
+        //textView.text.append(amountToReceive) // don't need this???
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated == true) // what is this???
+        super.viewWillAppear(animated) // what is this???
         
         updateTextView()
     }
     
     func updateTextView() {
-        textView.text.append(amountToReceive + "\n")
+        if !amountToReceive.isEmpty {
+            // get the current date and time
+            let currentDateTime = Date()
+            // initialize the date formatter and
+            let formatter = DateFormatter()
+            // set the style
+            formatter.timeStyle = .medium
+            formatter.dateStyle = .short
+            // get the date time String from the date object
+            let finalDate = formatter.string(from: currentDateTime)
+            
+            finalOutput = "\(amountToReceive); categoryWillBeHere; \(finalDate);"
+            textView.text.append("\n")
+            textView.text.append(finalOutput)
+        }
     }
 
     @IBAction func clearLog(_ sender: Any) {

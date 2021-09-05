@@ -31,14 +31,13 @@ class MainViewController: UIViewController {
         view.endEditing(true)
     }
     
-    
     @IBAction func newExpenseButton(_ sender: Any) {
         if let unwrappedPassedAmount = amountTextField.text {
             let tempAmount: Double = Double(currentBalance.text!)! - Double(unwrappedPassedAmount)!
             currentBalance.text! = String(tempAmount)
             
-            amountToReceive = "-" + String(tempAmount)
-            //tabBarController?.selectedIndex = 0 // WHAT IS THIS??? | ask about this line | and DELETE IT
+            amountToReceive = "-" + String(unwrappedPassedAmount)
+            tabBarController?.selectedIndex = 0 // opens first tab
         }
     }
     @IBAction func newIncomeButton(_ sender: Any) {
@@ -46,7 +45,8 @@ class MainViewController: UIViewController {
             let tempAmount: Double = Double(currentBalance.text!)! + Double(unwrappedPassedAmount)!
             currentBalance.text! = String(tempAmount)
             
-            amountToReceive = "+" + String(tempAmount)
+            amountToReceive = "+" + String(unwrappedPassedAmount)
+            tabBarController?.selectedIndex = 0 // opens first tab
         }
     }
     
