@@ -8,6 +8,7 @@
 import UIKit
 
 var amountToReceive: String = "" // get rid of global scoope variable. FIND ANOTHER SOLUTION
+var categoryToRecieve: String = "" // get rid of global scoope variable. FIND ANOTHER SOLUTION
 
 class StatsViewController: UIViewController {
     
@@ -31,7 +32,7 @@ class StatsViewController: UIViewController {
         if !amountToReceive.isEmpty {
             let finalDate = transactionDate()
             
-            finalOutput = "\(amountToReceive); categoryWillBeHere; \(finalDate);"
+            finalOutput = "\(amountToReceive); \(categoryToRecieve); \(finalDate);"
             textView.text.append("\n")
             textView.text.append(finalOutput)
         }
@@ -39,6 +40,8 @@ class StatsViewController: UIViewController {
 
     @IBAction func clearLog(_ sender: Any) {
         textView.text.removeAll()
+        textView.text.append("amount; category; date, time;\n")
+        textView.text.append("------------------------------")
     }
     
     func transactionDate() -> String {
@@ -53,14 +56,19 @@ class StatsViewController: UIViewController {
         return formatter.string(from: currentDateTime)
     }
     
+    // TO MAKE IT WORK!
+    // 1. Use array instead of String in textView
+    // 2. Watch this video - https://www.youtube.com/watch?v=ATR9gjRezKw&list=PLY4rE9dstrJyPbNmc1GjVUrfKjRakp-Dj&index=16
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func saveLog() {
+        UserDefaults.standard.set(textView.text, forKey: "LogKey")
+        UserDefaults.standard.synchronize()
     }
-    */
-
+    
+    func loadLog() {
+        if let log = UserDefaults.standard.array(forKey: "LogKey") as? [String] {
+            textView.text = log
+        }
+    }
+ */
 }
