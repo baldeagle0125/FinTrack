@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet var currentBalance: UILabel!
     
+    @IBOutlet var lastTransactionDate: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,8 +40,11 @@ class MainViewController: UIViewController {
             
             amountToReceive = "-" + String(unwrappedPassedAmount)
             tabBarController?.selectedIndex = 0 // opens first tab
+            
+            lastTransactionDateToLabel()
         }
     }
+    
     @IBAction func newIncomeButton(_ sender: Any) {
         if let unwrappedPassedAmount = amountTextField.text {
             let tempAmount: Double = Double(currentBalance.text!)! + Double(unwrappedPassedAmount)!
@@ -47,17 +52,33 @@ class MainViewController: UIViewController {
             
             amountToReceive = "+" + String(unwrappedPassedAmount)
             tabBarController?.selectedIndex = 0 // opens first tab
+            
+            lastTransactionDateToLabel()
         }
     }
     
     @IBAction func add10(_ sender: Any) {
         amountTextField.text = "10"
     }
+    
     @IBAction func add50(_ sender: Any) {
         amountTextField.text = "50"
     }
+    
     @IBAction func add100(_ sender: Any) {
         amountTextField.text = "100"
+    }
+    
+    func lastTransactionDateToLabel() {
+        // get the current date and time
+        let currentDateTime = Date()
+        // initialize the date formatter and
+        let formatter = DateFormatter()
+        // set the style
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .short
+        // get the date time String from the date object
+        lastTransactionDate.text = formatter.string(from: currentDateTime)
     }
 }
 

@@ -29,15 +29,7 @@ class StatsViewController: UIViewController {
     
     func updateTextView() {
         if !amountToReceive.isEmpty {
-            // get the current date and time
-            let currentDateTime = Date()
-            // initialize the date formatter and
-            let formatter = DateFormatter()
-            // set the style
-            formatter.timeStyle = .medium
-            formatter.dateStyle = .short
-            // get the date time String from the date object
-            let finalDate = formatter.string(from: currentDateTime)
+            let finalDate = transactionDate()
             
             finalOutput = "\(amountToReceive); categoryWillBeHere; \(finalDate);"
             textView.text.append("\n")
@@ -48,6 +40,19 @@ class StatsViewController: UIViewController {
     @IBAction func clearLog(_ sender: Any) {
         textView.text.removeAll()
     }
+    
+    func transactionDate() -> String {
+        // get the current date and time
+        let currentDateTime = Date()
+        // initialize the date formatter and
+        let formatter = DateFormatter()
+        // set the style
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .short
+        // get the date time String from the date object
+        return formatter.string(from: currentDateTime)
+    }
+    
     /*
     // MARK: - Navigation
 

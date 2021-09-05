@@ -12,13 +12,10 @@ class TabBarController: UITabBarController { // DELETE THIS FILE
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // launch Home tab by default (not the Stats tab)
+        self.selectedIndex = 1
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.selectedIndex = 1
-    }
     /*
     // MARK: - Navigation
 
