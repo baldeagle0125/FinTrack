@@ -20,6 +20,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet var selLang: UILabel!
     @IBOutlet var selCurr: UILabel!
     
+    @IBOutlet var restoreLogOutlet: UIButton!
+    
+    @IBOutlet var restorePurchasesOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +32,13 @@ class SettingsViewController: UIViewController {
         
         currencySelection.dataSource = self
         currencySelection.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        restoreLogOutlet.layer.cornerRadius = 10
+        restoreLogOutlet.clipsToBounds = true
+        restorePurchasesOutlet.layer.cornerRadius = 10
+        restorePurchasesOutlet.clipsToBounds = true
     }
 }
 

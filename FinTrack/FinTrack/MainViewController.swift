@@ -17,8 +17,14 @@ class MainViewController: UIViewController {
     
     @IBOutlet var categorySelection: UIPickerView!
     let categories = ["Food", "Health", "Bills", "Transport", "Pets", "Gifts", "Delivery", "Eating out", "Sports", "Entertainment", "Taxi", "Clothes"]
-    var selectedCategory: String = ""
+    var selectedCategory: String = "Food"
     @IBOutlet var selCate: UILabel!
+    
+    @IBOutlet var newExpenseButtonOutlet: UIButton!
+    
+    @IBOutlet var newIncomeButtonOutlet: UIButton!
+    
+    @IBOutlet var customButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,15 @@ class MainViewController: UIViewController {
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        newExpenseButtonOutlet.layer.cornerRadius = 10
+        newExpenseButtonOutlet.clipsToBounds = true
+        newIncomeButtonOutlet.layer.cornerRadius = 10
+        newIncomeButtonOutlet.clipsToBounds = true
+        customButtonOutlet.layer.cornerRadius = 10
+        customButtonOutlet.clipsToBounds = true
     }
     
     @IBAction func newExpenseButton(_ sender: Any) {
@@ -61,6 +76,7 @@ class MainViewController: UIViewController {
         if amountTextField.text == nil {
             // UIAlertController
             // 1st example
+            // https://developer.apple.com/documentation/uikit/windows_and_screens/getting_the_user_s_attention_with_alerts_and_action_sheets
             /*
             let alertController = UIAlertController(title: "iOScreator", message:
                     "Can't be nil!", preferredStyle: .alert)
@@ -88,18 +104,6 @@ class MainViewController: UIViewController {
             lastTransactionDateToLabel()
             amountTextField.text?.removeAll()
         }
-    }
-    
-    @IBAction func add10(_ sender: Any) {
-        amountTextField.text = "10"
-    }
-    
-    @IBAction func add50(_ sender: Any) {
-        amountTextField.text = "50"
-    }
-    
-    @IBAction func add100(_ sender: Any) {
-        amountTextField.text = "100"
     }
     
     func lastTransactionDateToLabel() {

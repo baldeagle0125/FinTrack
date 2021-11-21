@@ -12,6 +12,8 @@ var categoryToRecieve: String = "" // get rid of global scoope variable. FIND AN
 
 class StatsViewController: UIViewController {
     
+    @IBOutlet var clearLogButton: UIButton!
+    
     @IBOutlet var textView: UITextView!
     
     var finalOutput: String = ""
@@ -24,6 +26,9 @@ class StatsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // what is this???
+        
+        clearLogButton.layer.cornerRadius = 10
+        clearLogButton.clipsToBounds = true
         
         updateTextView()
     }
