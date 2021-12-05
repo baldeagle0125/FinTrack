@@ -7,58 +7,39 @@
 
 import UIKit
 
-var amountToReceive: String = "" // get rid of global scoope variable. FIND ANOTHER SOLUTION
-var categoryToRecieve: String = "" // get rid of global scoope variable. FIND ANOTHER SOLUTION
+var newTransactionGlobal = Transaction(category: "", amount: "", option: .expense, date: "") // get rid of global scope variable. FIND ANOTHER SOLUTION
 
 class StatsViewController: UIViewController {
     
+    // Outlets
     @IBOutlet var clearLogButton: UIButton!
-    
     @IBOutlet var textView: UITextView!
-    
-    var finalOutput: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //textView.text.append(amountToReceive) // don't need this???
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) // what is this???
+        super.viewWillAppear(animated) // what is this (animated)???
         
         clearLogButton.layer.cornerRadius = 10
         clearLogButton.clipsToBounds = true
         
-        updateTextView()
+        addTransactionToLog() // method calls whenever I go to Stats View
     }
     
-    func updateTextView() {
-        if !amountToReceive.isEmpty {
-            let finalDate = transactionDate()
-            
-            finalOutput = "\(amountToReceive); \(categoryToRecieve); \(finalDate);"
-            textView.text.append("\n")
-            textView.text.append(finalOutput)
-        }
+    func addTransactionToLog() {
+        let newTransactionLogItem = TransactionLog(amount: newTransactionGlobal.amount, category: newTransactionGlobal.category, date: newTransactionGlobal.date)
+        
+        let output: String = "\(newTransactionLogItem.amount); \(newTransactionLogItem.category); \(newTransactionLogItem.date)"
+        textView.text.append("\n")
+        textView.text.append(output)
     }
 
     @IBAction func clearLog(_ sender: Any) {
         textView.text.removeAll()
         textView.text.append("amount; category; date, time;\n")
         textView.text.append("------------------------------")
-    }
-    
-    func transactionDate() -> String {
-        // get the current date and time
-        let currentDateTime = Date()
-        // initialize the date formatter and
-        let formatter = DateFormatter()
-        // set the style
-        formatter.timeStyle = .medium
-        formatter.dateStyle = .short
-        // get the date time String from the date object
-        return formatter.string(from: currentDateTime)
     }
     
     // TO MAKE IT WORK!

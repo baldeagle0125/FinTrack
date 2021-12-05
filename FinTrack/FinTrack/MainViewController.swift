@@ -8,22 +8,17 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    // Outlets
     @IBOutlet var amountTextField: UITextField!
-    
     @IBOutlet var currentBalance: UILabel!
-    
     @IBOutlet var lastTransactionDate: UILabel!
-    
     @IBOutlet var categorySelection: UIPickerView!
-    let categories = ["Food", "Health", "Bills", "Transport", "Pets", "Gifts", "Delivery", "Eating out", "Sports", "Entertainment", "Taxi", "Clothes"]
+    // Current selected Categroy in UIPickerView
     var selectedCategory: String = "Food"
     @IBOutlet var selCate: UILabel!
-    
     @IBOutlet var newExpenseButtonOutlet: UIButton!
-    
     @IBOutlet var newIncomeButtonOutlet: UIButton!
-    
     @IBOutlet var customButtonOutlet: UIButton!
     
     override func viewDidLoad() {
@@ -31,19 +26,12 @@ class MainViewController: UIViewController {
         
         //Looks for single or multiple taps.
          let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
-
         view.addGestureRecognizer(tap)
         
         categorySelection.dataSource = self
         categorySelection.delegate = self
-    }
-    //Calls this function when the tap is recognized.
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,22 +43,37 @@ class MainViewController: UIViewController {
         customButtonOutlet.clipsToBounds = true
     }
     
-    @IBAction func newExpenseButton(_ sender: Any) {
-        if let unwrappedPassedAmount = amountTextField.text {
-            let tempAmount: Double = Double(currentBalance.text!)! - Double(unwrappedPassedAmount)!
-            currentBalance.text! = String(tempAmount)
-            
-            categoryToRecieve = selectedCategory
-            
-            amountToReceive = "-" + String(unwrappedPassedAmount)
-            tabBarController?.selectedIndex = 0 // opens first tab
-            
-            lastTransactionDateToLabel()
-            amountTextField.text?.removeAll()
-        }
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
-    @IBAction func newIncomeButton(_ sender: Any) throws {
+    // Get current date and time
+    func getDate() -> String {
+        // get the current date and time
+        let currentDate = Date()
+        // initialize the date formatter and
+        let formatter = DateFormatter()
+        // set the style
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .short
+        // return the date time String from the date object
+        return formatter.string(from: currentDate)
+    }
+    
+    @IBAction func newExpenseButton(_ sender: Any) {
+        let transactionDate = getDate()
+        let newTransaction = Transaction(category: selectedCategory, amount: "-" + amountTextField.text!, option: .expense, date: transactionDate)
+        lastTransactionDate.text = transactionDate
+        
+        //tabBarController?.selectedIndex = 0 // opens first tab  USE THIS!! ADD THIS TO SETTINGS AS A CHOICE
+        newTransactionGlobal = newTransaction
+        
+        //addTransactionToLog() // find a way to use it!
+    }
+    
+    @IBAction func newIncomeButton(_ sender: Any)  {
         // TODO ||| CATCH AN 'NIL IN TEXTFIELD' EXCEPTION
         /*
         if amountTextField.text == nil {
@@ -94,28 +97,14 @@ class MainViewController: UIViewController {
             */
         }
         */
-        if let unwrappedPassedAmount = amountTextField.text {
-            let tempAmount: Double = Double(currentBalance.text!)! + Double(unwrappedPassedAmount)!
-            currentBalance.text! = String(tempAmount)
-            
-            amountToReceive = "+" + String(unwrappedPassedAmount)
-            tabBarController?.selectedIndex = 0 // opens first tab
-            
-            lastTransactionDateToLabel()
-            amountTextField.text?.removeAll()
-        }
-    }
-    
-    func lastTransactionDateToLabel() {
-        // get the current date and time
-        let currentDateTime = Date()
-        // initialize the date formatter and
-        let formatter = DateFormatter()
-        // set the style
-        formatter.timeStyle = .medium
-        formatter.dateStyle = .short
-        // get the date time String from the date object
-        lastTransactionDate.text = formatter.string(from: currentDateTime)
+        
+        let transactionDate = getDate()
+        let newTransaction = Transaction(category: selectedCategory, amount: "+" + amountTextField.text!, option: .expense, date: transactionDate)
+        lastTransactionDate.text = transactionDate
+        
+        newTransactionGlobal = newTransaction
+        
+        //addTransactionToLog()
     }
 }
 
@@ -126,15 +115,15 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categories.count
+        return transactionCategories.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCategory = categories[row]
-        selCate.text = categories[row]
+        selectedCategory = transactionCategories[row]
+        selCate.text = transactionCategories[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categories[row]
+        return transactionCategories[row]
     }
 }

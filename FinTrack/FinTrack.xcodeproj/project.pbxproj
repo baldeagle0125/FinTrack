@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */; };
+		A32DCE64275BF0C900944280 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE63275BF0C900944280 /* Transaction.swift */; };
+		A32DCE66275BF5E900944280 /* TransactionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE65275BF5E800944280 /* TransactionCategories.swift */; };
+		A32DCE68275C013600944280 /* TransactionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE67275C013600944280 /* TransactionLog.swift */; };
 		A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48226D92FD600CE9067 /* AppDelegate.swift */; };
 		A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */; };
 		A3D4B48726D92FD600CE9067 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48626D92FD600CE9067 /* MainViewController.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryManagerViewController.swift; sourceTree = "<group>"; };
+		A32DCE63275BF0C900944280 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		A32DCE65275BF5E800944280 /* TransactionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategories.swift; sourceTree = "<group>"; };
+		A32DCE67275C013600944280 /* TransactionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLog.swift; sourceTree = "<group>"; };
 		A3D4B47F26D92FD600CE9067 /* FinTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D4B48226D92FD600CE9067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,9 +73,13 @@
 				A3D4B48226D92FD600CE9067 /* AppDelegate.swift */,
 				A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */,
 				A3D4B48626D92FD600CE9067 /* MainViewController.swift */,
+				A32DCE67275C013600944280 /* TransactionLog.swift */,
+				A32DCE65275BF5E800944280 /* TransactionCategories.swift */,
 				A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */,
 				A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */,
 				A3D4B48826D92FD600CE9067 /* Main.storyboard */,
+				A32DCE63275BF0C900944280 /* Transaction.swift */,
+				A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */,
 				A3D7BB3F26E408D20068B4C3 /* TabBarController.swift */,
 				A3D4B48B26D92FD900CE9067 /* Assets.xcassets */,
 				A3D4B48D26D92FD900CE9067 /* LaunchScreen.storyboard */,
@@ -148,10 +160,14 @@
 			files = (
 				A3D4B48726D92FD600CE9067 /* MainViewController.swift in Sources */,
 				A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */,
+				A32DCE64275BF0C900944280 /* Transaction.swift in Sources */,
+				A32DCE68275C013600944280 /* TransactionLog.swift in Sources */,
+				A32DCE66275BF5E900944280 /* TransactionCategories.swift in Sources */,
 				A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */,
 				A3D7BB4026E408D20068B4C3 /* TabBarController.swift in Sources */,
 				A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */,
 				A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */,
+				A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
