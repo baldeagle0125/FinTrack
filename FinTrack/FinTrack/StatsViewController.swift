@@ -20,12 +20,13 @@ class StatsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) // what is this (animated)???
+        super.viewWillAppear(animated)
         
         clearLogButton.layer.cornerRadius = 10
         clearLogButton.clipsToBounds = true
         
         addTransactionToLog() // method calls whenever I go to Stats View
+        // Rework this
     }
     
     func addTransactionToLog() {

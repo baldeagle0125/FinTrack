@@ -9,19 +9,16 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    // Outlets
     @IBOutlet var languageSelection: UIPickerView!
     let languages = ["English", "Русский", "Українська"]
     var selectedLanguage: String = ""
-    
     @IBOutlet var currencySelection: UIPickerView!
-    let currencies = ["(USD) US dollar", "(UAH) Ukrainian hryvnia", "(RUB) Russian ruble"]
+    let currencies = ["(USD) US dollar", "(EUR) Euro", "(UAH) Ukrainian hryvnia", "(RUB) Russian ruble"]
     var selectedCurrency: String = ""
-    
     @IBOutlet var selLang: UILabel!
     @IBOutlet var selCurr: UILabel!
-    
     @IBOutlet var restoreLogOutlet: UIButton!
-    
     @IBOutlet var restorePurchasesOutlet: UIButton!
     
     override func viewDidLoad() {

@@ -11,8 +11,7 @@ class CustomCategoryManagerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
+    }    
 
     /*
     // MARK: - Navigation

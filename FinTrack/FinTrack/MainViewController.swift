@@ -63,6 +63,17 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func newExpenseButton(_ sender: Any) {
+        // Output an alert if Text Field is empty
+        if (amountTextField.text?.isEmpty == true || amountTextField.text == "0") {
+            let alert = UIAlertController(title: "Amount error!", message: "Amount can't be 0 or empty", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+        }
+        
         let transactionDate = getDate()
         let newTransaction = Transaction(category: selectedCategory, amount: "-" + amountTextField.text!, option: .expense, date: transactionDate)
         lastTransactionDate.text = transactionDate
@@ -74,29 +85,16 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func newIncomeButton(_ sender: Any)  {
-        // TODO ||| CATCH AN 'NIL IN TEXTFIELD' EXCEPTION
-        /*
-        if amountTextField.text == nil {
-            // UIAlertController
-            // 1st example
-            // https://developer.apple.com/documentation/uikit/windows_and_screens/getting_the_user_s_attention_with_alerts_and_action_sheets
-            /*
-            let alertController = UIAlertController(title: "iOScreator", message:
-                    "Can't be nil!", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-                self.present(alertController, animated: true, completion: nil)
-            */
-            // 2nd example
-            /*
-            let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
+        // Output an alert if Text Field is empty
+        if (amountTextField.text?.isEmpty == true || amountTextField.text == "0") {
+            let alert = UIAlertController(title: "Amount error!", message: "Amount can't be 0 or empty", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
             }))
             self.present(alert, animated: true, completion: nil)
-            */
+            
+            return
         }
-        */
         
         let transactionDate = getDate()
         let newTransaction = Transaction(category: selectedCategory, amount: "+" + amountTextField.text!, option: .expense, date: transactionDate)
@@ -105,6 +103,10 @@ class MainViewController: UIViewController {
         newTransactionGlobal = newTransaction
         
         //addTransactionToLog()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO
     }
 }
 
