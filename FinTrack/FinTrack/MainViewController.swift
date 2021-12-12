@@ -76,6 +76,8 @@ class MainViewController: UIViewController {
         
         let transactionDate = getDate()
         let newTransaction = Transaction(category: selectedCategory, amount: "-" + amountTextField.text!, option: .expense, date: transactionDate)
+        
+        // Add date to lastTransactionDate
         lastTransactionDate.text = transactionDate
         
         //tabBarController?.selectedIndex = 0 // opens first tab  USE THIS!! ADD THIS TO SETTINGS AS A CHOICE

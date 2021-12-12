@@ -41,21 +41,9 @@ class StatsViewController: UIViewController {
         textView.text.removeAll()
         textView.text.append("amount; category; date, time;\n")
         textView.text.append("------------------------------")
+        
+        // Output to Xcode console
+        print("Working print | Log cleared") // not working, remove this, use NSLog instead
+        NSLog("Log cleared")
     }
-    
-    // TO MAKE IT WORK!
-    // 1. Use array instead of String in textView
-    // 2. Watch this video - https://www.youtube.com/watch?v=ATR9gjRezKw&list=PLY4rE9dstrJyPbNmc1GjVUrfKjRakp-Dj&index=16
-    /*
-    func saveLog() {
-        UserDefaults.standard.set(textView.text, forKey: "LogKey")
-        UserDefaults.standard.synchronize()
-    }
-    
-    func loadLog() {
-        if let log = UserDefaults.standard.array(forKey: "LogKey") as? [String] {
-            textView.text = log
-        }
-    }
- */
 }
