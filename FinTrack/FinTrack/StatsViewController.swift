@@ -38,6 +38,12 @@ class StatsViewController: UIViewController {
     }
 
     @IBAction func clearLog(_ sender: Any) {
+        let alert = UIAlertController(title: "Do you really want to CLEAR LOG?", message: "This operation CANNOT BE UNDONE", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
         textView.text.removeAll()
         textView.text.append("amount; category; date, time;\n")
         textView.text.append("------------------------------")
