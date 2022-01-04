@@ -1,21 +1,19 @@
 //
-//  TabBarController.swift
+//  AboutMe.swift
 //  FinTrack
 //
-//  Created by Igor Melashchenko on 9/4/21.
+//  Created by Igor Melashchenko on 1/4/22.
 //
 
 import UIKit
 
-class TabBarController: UITabBarController { // DELETE THIS FILE
+class AboutMe: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // launch Home tab by default (not the Stats tab)
-        self.selectedIndex = 0
     }
     
+
     /*
     // MARK: - Navigation
 

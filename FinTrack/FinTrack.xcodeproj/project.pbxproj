@@ -12,6 +12,7 @@
 		A32DCE66275BF5E900944280 /* TransactionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE65275BF5E800944280 /* TransactionCategories.swift */; };
 		A32DCE68275C013600944280 /* TransactionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE67275C013600944280 /* TransactionLog.swift */; };
 		A359437F276611AF0078E9C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359437E276611AF0078E9C4 /* ProfileViewController.swift */; };
+		A37CD584278425B200D79A64 /* AboutMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CD583278425B200D79A64 /* AboutMe.swift */; };
 		A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48226D92FD600CE9067 /* AppDelegate.swift */; };
 		A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */; };
 		A3D4B48726D92FD600CE9067 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48626D92FD600CE9067 /* MainViewController.swift */; };
@@ -20,7 +21,6 @@
 		A3D4B48F26D92FD900CE9067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D4B48D26D92FD900CE9067 /* LaunchScreen.storyboard */; };
 		A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */; };
 		A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */; };
-		A3D7BB4026E408D20068B4C3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3F26E408D20068B4C3 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +29,7 @@
 		A32DCE65275BF5E800944280 /* TransactionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategories.swift; sourceTree = "<group>"; };
 		A32DCE67275C013600944280 /* TransactionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLog.swift; sourceTree = "<group>"; };
 		A359437E276611AF0078E9C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A37CD583278425B200D79A64 /* AboutMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMe.swift; sourceTree = "<group>"; };
 		A3D4B47F26D92FD600CE9067 /* FinTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D4B48226D92FD600CE9067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		A3D4B49026D92FD900CE9067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		A3D7BB3F26E408D20068B4C3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,21 +72,21 @@
 		A3D4B48126D92FD600CE9067 /* FinTrack */ = {
 			isa = PBXGroup;
 			children = (
+				A3D4B49026D92FD900CE9067 /* Info.plist */,
+				A37CD583278425B200D79A64 /* AboutMe.swift */,
 				A3D4B48226D92FD600CE9067 /* AppDelegate.swift */,
-				A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */,
-				A3D4B48626D92FD600CE9067 /* MainViewController.swift */,
-				A32DCE67275C013600944280 /* TransactionLog.swift */,
-				A32DCE65275BF5E800944280 /* TransactionCategories.swift */,
-				A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */,
-				A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */,
-				A3D4B48826D92FD600CE9067 /* Main.storyboard */,
-				A359437E276611AF0078E9C4 /* ProfileViewController.swift */,
-				A32DCE63275BF0C900944280 /* Transaction.swift */,
 				A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */,
-				A3D7BB3F26E408D20068B4C3 /* TabBarController.swift */,
+				A3D4B48626D92FD600CE9067 /* MainViewController.swift */,
+				A359437E276611AF0078E9C4 /* ProfileViewController.swift */,
+				A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */,
+				A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */,
+				A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */,
+				A32DCE63275BF0C900944280 /* Transaction.swift */,
+				A32DCE65275BF5E800944280 /* TransactionCategories.swift */,
+				A32DCE67275C013600944280 /* TransactionLog.swift */,
 				A3D4B48B26D92FD900CE9067 /* Assets.xcassets */,
 				A3D4B48D26D92FD900CE9067 /* LaunchScreen.storyboard */,
-				A3D4B49026D92FD900CE9067 /* Info.plist */,
+				A3D4B48826D92FD600CE9067 /* Main.storyboard */,
 			);
 			path = FinTrack;
 			sourceTree = "<group>";
@@ -164,11 +164,11 @@
 				A3D4B48726D92FD600CE9067 /* MainViewController.swift in Sources */,
 				A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */,
 				A32DCE64275BF0C900944280 /* Transaction.swift in Sources */,
+				A37CD584278425B200D79A64 /* AboutMe.swift in Sources */,
 				A32DCE68275C013600944280 /* TransactionLog.swift in Sources */,
 				A32DCE66275BF5E900944280 /* TransactionCategories.swift in Sources */,
 				A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */,
 				A359437F276611AF0078E9C4 /* ProfileViewController.swift in Sources */,
-				A3D7BB4026E408D20068B4C3 /* TabBarController.swift in Sources */,
 				A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */,
 				A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */,
 				A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */,
