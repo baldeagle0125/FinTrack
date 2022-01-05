@@ -12,6 +12,7 @@ var newTransactionGlobal = Transaction(category: "", amount: "", option: .expens
 class StatsViewController: UIViewController {
     
     // Outlets
+    @IBOutlet var refreshLogButton: UIButton!
     @IBOutlet var clearLogButton: UIButton!
     @IBOutlet var textView: UITextView!
     
@@ -22,11 +23,15 @@ class StatsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Make buttons rounded
+        refreshLogButton.layer.cornerRadius = 10
+        refreshLogButton.clipsToBounds = true
         clearLogButton.layer.cornerRadius = 10
         clearLogButton.clipsToBounds = true
-        
-        addTransactionToLog() // method calls whenever I go to Stats View
-        // Rework this
+    }
+    
+    @IBAction func refreshLog(_ sender: UIButton) {
+        addTransactionToLog()
     }
     
     func addTransactionToLog() {
@@ -39,17 +44,22 @@ class StatsViewController: UIViewController {
 
     @IBAction func clearLog(_ sender: Any) {
         let alert = UIAlertController(title: "Do you really want to CLEAR LOG?", message: "This operation CANNOT BE UNDONE", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-        NSLog("The \"OK\" alert occured.")
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes, I am sure", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"Yes, I am sure\" alert occured.")
+            // Clear Log
+            self.textView.text.removeAll()
+            self.textView.text.append("amount; category; date, time;\n")
+            self.textView.text.append("------------------------------")
+            
+            // Output to Xcode console
+            print("Working print | Log cleared") // not working, remove this, use NSLog instead
+            NSLog("Log cleared")
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("No, wait", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"No, wait\" alert occured.")
+            // Do nothing
+            return
         }))
         self.present(alert, animated: true, completion: nil)
-        
-        textView.text.removeAll()
-        textView.text.append("amount; category; date, time;\n")
-        textView.text.append("------------------------------")
-        
-        // Output to Xcode console
-        print("Working print | Log cleared") // not working, remove this, use NSLog instead
-        NSLog("Log cleared")
     }
 }

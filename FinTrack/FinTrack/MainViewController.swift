@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Dismiss keyboard on tap (tap outside the keyboard)
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
@@ -80,8 +81,6 @@ class MainViewController: UIViewController {
         
         //tabBarController?.selectedIndex = 0 // opens first tab  USE THIS!! ADD THIS TO SETTINGS AS A CHOICE
         newTransactionGlobal = newTransaction
-        
-        //addTransactionToLog() // find a way to use it!
     }
     
     @IBAction func newIncomeButton(_ sender: Any)  {
