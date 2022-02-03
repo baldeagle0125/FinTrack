@@ -32,7 +32,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="MIq-Yt-HHp"/>
                                             <constraint firstAttribute="height" constant="38" id="iOv-D4-869"/>
                                         </constraints>
-                                        <state key="normal" title="Refresh log">
+                                        <state key="normal" title="Add transaction to log">
                                             <color key="titleColor" systemColor="tintColor"/>
                                         </state>
                                         <connections>
@@ -243,35 +243,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-Bb-Ii6">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RFo-Sb-mwq" userLabel="Category Manager Stack View">
+                                <rect key="frame" x="16" y="86" width="358" height="530.66666666666663"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="efg-b1-bOd" userLabel="Create New Category Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="164.33333333333334"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE NEW CATEGORY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiG-m1-QLP">
+                                                <rect key="frame" x="0.0" y="0.0" width="294.66666666666669" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-xJ-4Ij" userLabel="Category Name Stack View">
+                                                <rect key="frame" x="0.0" y="60" width="358" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FZ-vn-B63">
+                                                        <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMa-ZW-1Ww">
+                                                        <rect key="frame" x="129.33333333333337" y="0.0" width="228.66666666666663" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5h6-tz-qej">
+                                                <rect key="frame" x="0.0" y="123.99999999999999" width="358" height="40.333333333333329"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Create!">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5h6-tz-qej" secondAttribute="trailing" id="9ua-oO-3fS"/>
+                                            <constraint firstAttribute="trailing" secondItem="h9G-xJ-4Ij" secondAttribute="trailing" id="WQ8-fh-uRh"/>
+                                            <constraint firstItem="5h6-tz-qej" firstAttribute="leading" secondItem="efg-b1-bOd" secondAttribute="leading" id="eGE-BV-bCT"/>
+                                            <constraint firstItem="h9G-xJ-4Ij" firstAttribute="leading" secondItem="efg-b1-bOd" secondAttribute="leading" id="iD9-jv-2Gd"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="i7N-0y-VGY" userLabel="Delete Existing Category Stack View">
+                                        <rect key="frame" x="0.0" y="184.33333333333334" width="358" height="346.33333333333326"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DELETE EXISTING CATEGORY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsX-NV-cu8">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-Ek-TfZ">
+                                                <rect key="frame" x="0.0" y="60" width="358" height="216"/>
+                                            </datePicker>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-wi-1YB">
+                                                <rect key="frame" x="0.0" y="306.00000000000006" width="358" height="40.333333333333314"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Delete!">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dCy-wi-1YB" secondAttribute="trailing" id="UTz-Ua-SGA"/>
+                                            <constraint firstItem="dCy-wi-1YB" firstAttribute="leading" secondItem="i7N-0y-VGY" secondAttribute="leading" id="Zr3-Th-jJ5"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="efg-b1-bOd" secondAttribute="trailing" id="7Oa-CA-dsb"/>
+                                    <constraint firstAttribute="trailing" secondItem="i7N-0y-VGY" secondAttribute="trailing" id="85Z-6W-EH9"/>
+                                    <constraint firstItem="i7N-0y-VGY" firstAttribute="leading" secondItem="RFo-Sb-mwq" secondAttribute="leading" id="9yY-7h-x9Q"/>
+                                    <constraint firstItem="efg-b1-bOd" firstAttribute="leading" secondItem="RFo-Sb-mwq" secondAttribute="leading" id="Lri-UG-Ydk"/>
+                                </constraints>
+                            </stackView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-Bb-Ii6">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                 <color key="barTintColor" systemColor="systemGray2Color"/>
                                 <items>
                                     <navigationItem title="Category manager" id="poO-UC-4Si"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding custom categories coming soon!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1P6-Ed-Pev">
-                                <rect key="frame" x="22.666666666666657" y="209" width="344.66666666666674" height="25"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fva-ea-thP"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="1P6-Ed-Pev" firstAttribute="centerY" secondItem="6rA-IG-YzR" secondAttribute="centerY" constant="-173.5" id="a1N-Dg-Ffp"/>
-                            <constraint firstItem="1P6-Ed-Pev" firstAttribute="centerX" secondItem="6rA-IG-YzR" secondAttribute="centerX" id="q3a-M7-0bp"/>
+                            <constraint firstItem="EIe-Bb-Ii6" firstAttribute="top" secondItem="fva-ea-thP" secondAttribute="top" id="73J-GD-gbM"/>
+                            <constraint firstItem="RFo-Sb-mwq" firstAttribute="top" secondItem="EIe-Bb-Ii6" secondAttribute="bottom" constant="30" id="7Va-tO-aAA"/>
+                            <constraint firstItem="EIe-Bb-Ii6" firstAttribute="leading" secondItem="6rA-IG-YzR" secondAttribute="leading" id="H6b-xp-8EK"/>
+                            <constraint firstItem="EIe-Bb-Ii6" firstAttribute="centerX" secondItem="RFo-Sb-mwq" secondAttribute="centerX" id="KsZ-D5-8Yc"/>
+                            <constraint firstItem="RFo-Sb-mwq" firstAttribute="leading" secondItem="fva-ea-thP" secondAttribute="leading" constant="16" id="ev4-NB-8Lg"/>
+                            <constraint firstItem="RFo-Sb-mwq" firstAttribute="centerX" secondItem="6rA-IG-YzR" secondAttribute="centerX" id="hJC-wl-rsy"/>
+                            <constraint firstItem="fva-ea-thP" firstAttribute="trailing" secondItem="RFo-Sb-mwq" secondAttribute="trailing" constant="16" id="taL-6g-igg"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Kss-pp-Q6Q"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="categoryNameTextField" destination="h9G-xJ-4Ij" id="P1g-zG-Loe"/>
+                        <outlet property="categorySelector" destination="I5w-Ek-TfZ" id="jh4-qj-x85"/>
+                        <outlet property="createButton" destination="5h6-tz-qej" id="Nkb-07-gSC"/>
+                        <outlet property="deleteButton" destination="dCy-wi-1YB" id="9U7-Km-Cry"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOS-yk-quU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678" y="1623"/>
+            <point key="canvasLocation" x="-678.46153846153845" y="1622.9857819905212"/>
         </scene>
         <!--Settings-->
         <scene sceneID="nuh-bB-9Ik">
@@ -374,9 +458,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prD-DU-KUY">
-                                <rect key="frame" x="92.333333333333329" y="712" width="205.66666666666669" height="31"/>
+                                <rect key="frame" x="92.333333333333329" y="695" width="205.66666666666669" height="48"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="App created by @mr_igor25"/>
+                                <buttonConfiguration key="configuration" style="plain" title="App created by @mr_igor25 More info..." titleAlignment="center"/>
                                 <connections>
                                     <segue destination="kon-Yp-tpx" kind="show" id="48c-L1-UQy"/>
                                 </connections>
@@ -606,7 +690,7 @@
         <!--AboutMe-->
         <scene sceneID="Pj2-F2-rst">
             <objects>
-                <viewController title="AboutMe" id="kon-Yp-tpx" customClass="AboutMe" customModule="FinTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AboutMe" id="kon-Yp-tpx" customClass="AboutMeViewController" customModule="FinTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FV6-3E-pQI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -667,6 +751,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
