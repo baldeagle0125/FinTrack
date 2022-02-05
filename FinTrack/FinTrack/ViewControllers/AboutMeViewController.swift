@@ -10,13 +10,6 @@ class AboutMeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Make buttons smaller
-        facebookButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
-        instagramButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
-        twitterButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
-        githubButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
-        youtubeButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
     }
     
     @IBAction func facebookButtonAction(_ sender: Any) {

@@ -28,7 +28,7 @@ class StatsViewController: UIViewController {
     }
     
     func addTransactionToLog() {
-        let newTransactionLogItem = TransactionLog(amount: newTransactionGlobal.amount, category: newTransactionGlobal.category, date: newTransactionGlobal.date)
+        let newTransactionLogItem = Transaction(category: newTransactionGlobal.category, amount: newTransactionGlobal.amount, option: .unknown, date: newTransactionGlobal.date)
         
         let output: String = "\(newTransactionLogItem.amount); \(newTransactionLogItem.category); \(newTransactionLogItem.date)"
         textView.text.append("\n")

@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet var lastTransactionDate: UILabel!
     @IBOutlet var categorySelection: UIPickerView!
     // Current selected Categroy in UIPickerView
-    var selectedCategory: String = "Delivery"
+    var selectedCategory: String = "Food"
     @IBOutlet var selCate: UILabel!
     @IBOutlet var newExpenseButtonOutlet: UIButton!
     @IBOutlet var newIncomeButtonOutlet: UIButton!
@@ -22,6 +22,14 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Make buttons rounded
+        newExpenseButtonOutlet.layer.cornerRadius = 10
+        newExpenseButtonOutlet.clipsToBounds = true
+        newIncomeButtonOutlet.layer.cornerRadius = 10
+        newIncomeButtonOutlet.clipsToBounds = true
+        customButtonOutlet.layer.cornerRadius = 10
+        customButtonOutlet.clipsToBounds = true
         
         // Dismiss keyboard on tap (tap outside the keyboard)
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -34,32 +42,14 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Make buttons rounded
-        newExpenseButtonOutlet.layer.cornerRadius = 10
-        newExpenseButtonOutlet.clipsToBounds = true
-        newIncomeButtonOutlet.layer.cornerRadius = 10
-        newIncomeButtonOutlet.clipsToBounds = true
-        customButtonOutlet.layer.cornerRadius = 10
-        customButtonOutlet.clipsToBounds = true
+        // Reload PickerView components
+        categorySelection.reloadAllComponents()
     }
     
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
-    }
-    
-    // Get current date and time
-    func getDate() -> String {
-        // get the current date and time
-        let currentDate = Date()
-        // initialize the date formatter and
-        let formatter = DateFormatter()
-        // set the style
-        formatter.timeStyle = .medium
-        formatter.dateStyle = .short
-        // return the date time String from the date object
-        return formatter.string(from: currentDate)
     }
     
     @IBAction func newExpenseButton(_ sender: Any) {
@@ -74,18 +64,32 @@ class MainViewController: UIViewController {
             return
         }
         
-        let transactionDate = getDate()
-        let newTransaction = Transaction(category: selectedCategory, amount: "-" + amountTextField.text!, option: .expense, date: transactionDate)
+        currentBalance.text = String(Double(currentBalance.text!)! - Double(amountTextField.text!)!)
+        
+        let transactionDate = Transaction.getDate()
+        let transactionCategory = Transaction.transactionCategories.firstIndex(of: selectedCategory)
+        
+        let newTransaction = Transaction(category: Transaction.transactionCategories[transactionCategory!], amount: "-" + amountTextField.text!, option: .expense, date: transactionDate)
         
         // Add date to lastTransactionDate
         lastTransactionDate.text = transactionDate
         
-        //tabBarController?.selectedIndex = 0 // opens first tab  USE THIS!! ADD THIS TO SETTINGS AS A CHOICE
+        
+        
+        
+        
         newTransactionGlobal = newTransaction
+        
+        
+        
+        
+        
+        // Clear amountTextField
+        amountTextField.text = ""
     }
     
     @IBAction func newIncomeButton(_ sender: Any)  {
-        // Output an alert if Text Field is empty
+        // Output an alert if amountTextField is empty
         if (amountTextField.text?.isEmpty == true || amountTextField.text == "0") {
             let alert = UIAlertController(title: "Amount error!", message: "Amount can't be 0 or empty", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
@@ -96,17 +100,32 @@ class MainViewController: UIViewController {
             return
         }
         
-        let transactionDate = getDate()
-        let newTransaction = Transaction(category: selectedCategory, amount: "+" + amountTextField.text!, option: .expense, date: transactionDate)
+        currentBalance.text = String(Double(currentBalance.text!)! + Double(amountTextField.text!)!)
+        
+        let transactionDate = Transaction.getDate()
+        let transactionCategory = Transaction.transactionCategories.firstIndex(of: selectedCategory)
+        
+        let newTransaction = Transaction(category: Transaction.transactionCategories[transactionCategory!], amount: "+" + amountTextField.text!, option: .income, date: transactionDate)
+        
+        // Add date to lastTransactionDate
         lastTransactionDate.text = transactionDate
+        
+        
+        
+        
         
         newTransactionGlobal = newTransaction
         
-        //addTransactionToLog()
+        
+        
+        
+        
+        // Clear amountTextField
+        amountTextField.text = ""
     }
     
     @IBAction func unwindToMainViewController(segue: UIStoryboardSegue) {
-        
+        categorySelection.reloadAllComponents()
     }
 }
 
@@ -117,15 +136,20 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return transactionCategories.count
+        return Transaction.transactionCategories.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCategory = transactionCategories[row]
-        selCate.text = transactionCategories[row]
+        selectedCategory = Transaction.transactionCategories[row]
+        selCate.text = Transaction.transactionCategories[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return transactionCategories[row]
+        if Transaction.transactionCategories.indices.contains(row) {
+            return Transaction.transactionCategories[row]
+        } else {
+            Transaction.transactionCategories.append("")
+            return Transaction.transactionCategories[row]
+        }
     }
 }

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */; };
 		A32DCE64275BF0C900944280 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE63275BF0C900944280 /* Transaction.swift */; };
-		A32DCE66275BF5E900944280 /* TransactionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE65275BF5E800944280 /* TransactionCategories.swift */; };
-		A32DCE68275C013600944280 /* TransactionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE67275C013600944280 /* TransactionLog.swift */; };
 		A359437F276611AF0078E9C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359437E276611AF0078E9C4 /* ProfileViewController.swift */; };
 		A37CD584278425B200D79A64 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CD583278425B200D79A64 /* AboutMeViewController.swift */; };
 		A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48226D92FD600CE9067 /* AppDelegate.swift */; };
@@ -21,13 +19,16 @@
 		A3D4B48F26D92FD900CE9067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D4B48D26D92FD900CE9067 /* LaunchScreen.storyboard */; };
 		A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */; };
 		A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */; };
+		A3D9C03827AEEA5E000A38E0 /* UserMainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C03727AEEA5D000A38E0 /* UserMainData.swift */; };
+		A3D9C03A27AEEA7D000A38E0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C03927AEEA7D000A38E0 /* UserSettings.swift */; };
+		A3D9C03C27AEEA88000A38E0 /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C03B27AEEA88000A38E0 /* UserStats.swift */; };
+		A3D9C04327AEF3AD000A38E0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C04227AEF3AD000A38E0 /* Settings.swift */; };
+		A3D9C04627AEF42C000A38E0 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C04527AEF42C000A38E0 /* Stats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryManagerViewController.swift; sourceTree = "<group>"; };
 		A32DCE63275BF0C900944280 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		A32DCE65275BF5E800944280 /* TransactionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategories.swift; sourceTree = "<group>"; };
-		A32DCE67275C013600944280 /* TransactionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLog.swift; sourceTree = "<group>"; };
 		A359437E276611AF0078E9C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A37CD583278425B200D79A64 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		A3D4B47F26D92FD600CE9067 /* FinTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +41,11 @@
 		A3D4B49026D92FD900CE9067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A3D9C03727AEEA5D000A38E0 /* UserMainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainData.swift; sourceTree = "<group>"; };
+		A3D9C03927AEEA7D000A38E0 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		A3D9C03B27AEEA88000A38E0 /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
+		A3D9C04227AEF3AD000A38E0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A3D9C04527AEF42C000A38E0 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,15 +94,50 @@
 				A3D4B49026D92FD900CE9067 /* Info.plist */,
 				A3D4B48226D92FD600CE9067 /* AppDelegate.swift */,
 				A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */,
-				A32DCE63275BF0C900944280 /* Transaction.swift */,
-				A32DCE65275BF5E800944280 /* TransactionCategories.swift */,
-				A32DCE67275C013600944280 /* TransactionLog.swift */,
 				A3D4B48B26D92FD900CE9067 /* Assets.xcassets */,
 				A3D4B48D26D92FD900CE9067 /* LaunchScreen.storyboard */,
 				A3D4B48826D92FD600CE9067 /* Main.storyboard */,
+				A3D9C04027AEF294000A38E0 /* Settings */,
+				A3D9C04427AEF422000A38E0 /* Stats */,
+				A3D9C03F27AEF289000A38E0 /* Transaction */,
+				A3D9C03D27AEEA9D000A38E0 /* UserData */,
 				A35A9C9027AAEC270094BF0D /* ViewControllers */,
 			);
 			path = FinTrack;
+			sourceTree = "<group>";
+		};
+		A3D9C03D27AEEA9D000A38E0 /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				A3D9C03B27AEEA88000A38E0 /* UserStats.swift */,
+				A3D9C03927AEEA7D000A38E0 /* UserSettings.swift */,
+				A3D9C03727AEEA5D000A38E0 /* UserMainData.swift */,
+			);
+			path = UserData;
+			sourceTree = "<group>";
+		};
+		A3D9C03F27AEF289000A38E0 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				A32DCE63275BF0C900944280 /* Transaction.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		A3D9C04027AEF294000A38E0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A3D9C04227AEF3AD000A38E0 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A3D9C04427AEF422000A38E0 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				A3D9C04527AEF42C000A38E0 /* Stats.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,8 +214,11 @@
 				A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */,
 				A32DCE64275BF0C900944280 /* Transaction.swift in Sources */,
 				A37CD584278425B200D79A64 /* AboutMeViewController.swift in Sources */,
-				A32DCE68275C013600944280 /* TransactionLog.swift in Sources */,
-				A32DCE66275BF5E900944280 /* TransactionCategories.swift in Sources */,
+				A3D9C03A27AEEA7D000A38E0 /* UserSettings.swift in Sources */,
+				A3D9C04627AEF42C000A38E0 /* Stats.swift in Sources */,
+				A3D9C03C27AEEA88000A38E0 /* UserStats.swift in Sources */,
+				A3D9C03827AEEA5E000A38E0 /* UserMainData.swift in Sources */,
+				A3D9C04327AEF3AD000A38E0 /* Settings.swift in Sources */,
 				A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */,
 				A359437F276611AF0078E9C4 /* ProfileViewController.swift in Sources */,
 				A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */,

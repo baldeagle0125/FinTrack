@@ -3,10 +3,10 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     @IBOutlet var languageSelection: UIPickerView!
-    let languages = ["English", "Русский", "Українська"]
+    
     var selectedLanguage: String = ""
     @IBOutlet var currencySelection: UIPickerView!
-    let currencies = ["(USD) US dollar", "(EUR) Euro", "(UAH) Ukrainian hryvnia", "(RUB) Russian ruble"]
+    
     var selectedCurrency: String = ""
     @IBOutlet var selLang: UILabel!
     @IBOutlet var selCurr: UILabel!
@@ -38,10 +38,10 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        var countrows : Int = languages.count
+        var countrows : Int = Settings.Languages.count
         
         if pickerView == currencySelection {
-            countrows = self.currencies.count
+            countrows = Settings.Currencies.count
         }
         
         return countrows
@@ -49,10 +49,10 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == languageSelection {
-            let titleRow = languages[row]
+            let titleRow = Settings.Languages[row]
             return titleRow
         } else if pickerView == currencySelection {
-            let titleRow = currencies[row]
+            let titleRow = Settings.Currencies[row]
             return titleRow
         }
         
@@ -61,11 +61,11 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == languageSelection {
-            self.selectedLanguage = self.languages[row]
-            self.selLang.text = self.languages[row]
+            Settings.selectedLanguage = Settings.Languages[row]
+            self.selLang.text = Settings.Languages[row]
         } else if pickerView == currencySelection {
-            self.selectedCurrency = self.currencies[row]
-            self.selCurr.text = self.currencies[row]
+            Settings.selectedCurrency = Settings.Currencies[row]
+            self.selCurr.text = Settings.Currencies[row]
         }
     }
     
