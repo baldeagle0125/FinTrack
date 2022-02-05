@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "192-1923042_github-icon-png-github-png.png@1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "192-1923042_github-icon-png-github-png.png@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "192-1923042_github-icon-png-github-png.png@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

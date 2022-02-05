@@ -279,6 +279,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Create!">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="createButtonAction:" destination="jnz-MY-m7c" eventType="touchUpInside" id="Kzp-6a-MPE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -297,9 +300,9 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-Ek-TfZ">
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VY9-f9-40Q" userLabel="Category Selector">
                                                 <rect key="frame" x="0.0" y="60" width="358" height="216"/>
-                                            </datePicker>
+                                            </pickerView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-wi-1YB">
                                                 <rect key="frame" x="0.0" y="306.00000000000006" width="358" height="40.333333333333314"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -308,6 +311,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Delete!">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="deleteButtonAction:" destination="jnz-MY-m7c" eventType="touchUpInside" id="mwN-1s-NYT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -327,7 +333,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                 <color key="barTintColor" systemColor="systemGray2Color"/>
                                 <items>
-                                    <navigationItem title="Category manager" id="poO-UC-4Si"/>
+                                    <navigationItem title="Category manager" id="poO-UC-4Si">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="adK-5Y-6E4">
+                                            <connections>
+                                                <segue destination="Cx8-Em-BoD" kind="unwind" unwindAction="unwindToMainViewControllerWithSegue:" id="SJu-2V-rjt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -347,15 +359,16 @@
                     <navigationItem key="navigationItem" id="Kss-pp-Q6Q"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="categoryNameTextField" destination="h9G-xJ-4Ij" id="P1g-zG-Loe"/>
-                        <outlet property="categorySelector" destination="I5w-Ek-TfZ" id="jh4-qj-x85"/>
+                        <outlet property="categoryNameTextField" destination="dMa-ZW-1Ww" id="j72-5a-Mfy"/>
+                        <outlet property="categorySelector" destination="VY9-f9-40Q" id="M3b-OF-rQy"/>
                         <outlet property="createButton" destination="5h6-tz-qej" id="Nkb-07-gSC"/>
                         <outlet property="deleteButton" destination="dCy-wi-1YB" id="9U7-Km-Cry"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOS-yk-quU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Cx8-Em-BoD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-678.46153846153845" y="1622.9857819905212"/>
+            <point key="canvasLocation" x="-678" y="1623"/>
         </scene>
         <!--Settings-->
         <scene sceneID="nuh-bB-9Ik">
@@ -523,7 +536,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="x9N-m3-WbA" userLabel="Account management">
-                                <rect key="frame" x="70" y="189" width="250" height="264"/>
+                                <rect key="frame" x="70" y="189" width="250" height="148"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBU-E3-166">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="34"/>
@@ -567,6 +580,11 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="eYl-uh-QcP"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2lH-aS-ZzV"/>
@@ -695,33 +713,130 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-y6-BxI">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-y6-BxI">
+                                <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="iRW-hz-x5Y"/>
+                                </constraints>
                                 <color key="barTintColor" systemColor="systemGray2Color"/>
                                 <items>
-                                    <navigationItem title="About @mr_igor25" id="EJw-Ri-leG"/>
+                                    <navigationItem title="About @mr_igor25" id="EJw-Ri-leG">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="qkN-js-2hV">
+                                            <connections>
+                                                <segue destination="OzU-1d-TME" kind="unwind" unwindAction="unwindToSettingsViewControllerWithSegue:" id="Bag-zG-Hyi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information about @mr_igor25 coming soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdq-Xy-qm6">
-                                <rect key="frame" x="25" y="235" width="340" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="4TH-1m-FmI" userLabel="Bio Stack View">
+                                <rect key="frame" x="16" y="85" width="332" height="117.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 y.o. Learning iOS development. Tech enthusiast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdq-Xy-qm6">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="38.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CtK-RU-UBv" userLabel="Social Networks Stack View">
+                                        <rect key="frame" x="0.0" y="57.333333333333343" width="332" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiA-B0-WqK">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="3Yr-52-Qt9"/>
+                                                    <constraint firstAttribute="height" constant="60" id="NlY-Se-5sF"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="facebook"/>
+                                                <connections>
+                                                    <action selector="facebookButtonAction:" destination="kon-Yp-tpx" eventType="touchUpInside" id="XJU-1G-MOl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftx-gK-7ac">
+                                                <rect key="frame" x="68" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="onV-2y-JOV"/>
+                                                    <constraint firstAttribute="height" constant="60" id="tzu-yu-qQU"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="instagram"/>
+                                                <connections>
+                                                    <action selector="instagramButtonAction:" destination="kon-Yp-tpx" eventType="touchUpInside" id="f9j-4m-Anw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4b-Uj-HYB">
+                                                <rect key="frame" x="136" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="mcE-Qx-Hp9"/>
+                                                    <constraint firstAttribute="height" constant="60" id="xPP-Kq-cfa"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="twitter"/>
+                                                <connections>
+                                                    <action selector="twitterButtonAction:" destination="kon-Yp-tpx" eventType="touchUpInside" id="dLp-vi-vdg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg4-sh-9aJ">
+                                                <rect key="frame" x="204" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="Jtx-sj-ZcY"/>
+                                                    <constraint firstAttribute="height" constant="60" id="fUA-Xr-jOc"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="github"/>
+                                                <connections>
+                                                    <action selector="githubButtonAction:" destination="kon-Yp-tpx" eventType="touchUpInside" id="jUN-yM-R1P"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prJ-GW-ewt">
+                                                <rect key="frame" x="272" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Ge6-dM-hXW"/>
+                                                    <constraint firstAttribute="width" constant="60" id="zYB-zs-ako"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="youtube"/>
+                                                <connections>
+                                                    <action selector="youtubeButtonAction:" destination="kon-Yp-tpx" eventType="touchUpInside" id="ytW-Df-sTY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CtK-RU-UBv" firstAttribute="leading" secondItem="4TH-1m-FmI" secondAttribute="leading" id="7HM-33-MPQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="CtK-RU-UBv" secondAttribute="trailing" id="IHI-pU-MY9"/>
+                                    <constraint firstItem="Sdq-Xy-qm6" firstAttribute="leading" secondItem="4TH-1m-FmI" secondAttribute="leading" id="hFT-h9-sa5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sdq-Xy-qm6" secondAttribute="trailing" id="mxz-Gx-deE"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gW3-va-jQa"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="Sdq-Xy-qm6" firstAttribute="centerX" secondItem="FV6-3E-pQI" secondAttribute="centerX" id="jFq-Jp-B33"/>
-                            <constraint firstItem="Sdq-Xy-qm6" firstAttribute="centerY" secondItem="FV6-3E-pQI" secondAttribute="centerY" constant="-149.5" id="xWb-1O-igW"/>
+                            <constraint firstItem="4TH-1m-FmI" firstAttribute="centerX" secondItem="FV6-3E-pQI" secondAttribute="centerX" id="2gh-Ly-iXa"/>
+                            <constraint firstItem="4TH-1m-FmI" firstAttribute="leading" secondItem="gW3-va-jQa" secondAttribute="leading" constant="16" id="AXK-Kl-pMF"/>
+                            <constraint firstItem="5Hq-y6-BxI" firstAttribute="leading" secondItem="FV6-3E-pQI" secondAttribute="leading" id="Ful-1M-WmW"/>
+                            <constraint firstItem="5Hq-y6-BxI" firstAttribute="top" secondItem="gW3-va-jQa" secondAttribute="top" id="Jfl-6w-vBQ"/>
+                            <constraint firstItem="gW3-va-jQa" firstAttribute="trailing" secondItem="4TH-1m-FmI" secondAttribute="trailing" constant="16" id="ZrL-5J-NNb"/>
+                            <constraint firstAttribute="trailing" secondItem="5Hq-y6-BxI" secondAttribute="trailing" id="kqN-Yd-lnX"/>
+                            <constraint firstItem="4TH-1m-FmI" firstAttribute="top" secondItem="5Hq-y6-BxI" secondAttribute="bottom" constant="40" id="xEm-FT-np6"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IIt-CD-flk"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="facebookButton" destination="ZiA-B0-WqK" id="wtZ-Tt-uRZ"/>
+                        <outlet property="githubButton" destination="lg4-sh-9aJ" id="kPW-Zx-xIH"/>
+                        <outlet property="instagramButton" destination="ftx-gK-7ac" id="jSu-ii-Nx1"/>
+                        <outlet property="twitterButton" destination="L4b-Uj-HYB" id="Zcn-dA-WTr"/>
+                        <outlet property="youtubeButton" destination="prJ-GW-ewt" id="fJi-nt-87p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2V-C7-GYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="OzU-1d-TME" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1457" y="1623"/>
         </scene>
@@ -731,12 +846,17 @@
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
         <image name="clear" catalog="system" width="128" height="114"/>
+        <image name="facebook" width="100" height="100"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="github" width="100" height="100"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="instagram" width="100" height="100"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="twitter" width="100" height="100"/>
+        <image name="youtube" width="100" height="100"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

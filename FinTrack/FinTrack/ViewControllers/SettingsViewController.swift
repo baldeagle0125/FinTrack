@@ -1,15 +1,7 @@
-//
-//  SettingsViewController.swift
-//  FinTrack
-//
-//  Created by Igor Melashchenko on 9/4/21.
-//
-
 import UIKit
 
 class SettingsViewController: UIViewController {
     
-    // Outlets
     @IBOutlet var languageSelection: UIPickerView!
     let languages = ["English", "Русский", "Українська"]
     var selectedLanguage: String = ""
@@ -75,5 +67,9 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             self.selectedCurrency = self.currencies[row]
             self.selCurr.text = self.currencies[row]
         }
+    }
+    
+    @IBAction func unwindToSettingsViewController(segue: UIStoryboardSegue) {
+        
     }
 }

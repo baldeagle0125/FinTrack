@@ -1,10 +1,3 @@
-//
-//  StatsViewController.swift
-//  FinTrack
-//
-//  Created by Igor Melashchenko on 9/4/21.
-//
-
 import UIKit
 
 var newTransactionGlobal = Transaction(category: "", amount: "", option: .expense, date: "") // get rid of global scope variable. FIND ANOTHER SOLUTION

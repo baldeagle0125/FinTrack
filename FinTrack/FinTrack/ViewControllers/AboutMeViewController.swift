@@ -1,27 +1,56 @@
-//
-//  AboutMeViewController.swift
-//  FinTrack
-//
-//  Created by Igor Melashchenko on 1/4/22.
-//
-
 import UIKit
 
 class AboutMeViewController: UIViewController {
 
+    @IBOutlet var facebookButton: UIButton!
+    @IBOutlet var instagramButton: UIButton!
+    @IBOutlet var twitterButton: UIButton!
+    @IBOutlet var githubButton: UIButton!
+    @IBOutlet var youtubeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Make buttons smaller
+        facebookButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
+        instagramButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
+        twitterButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
+        githubButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
+        youtubeButton.imageView?.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func facebookButtonAction(_ sender: Any) {
+        // Open URL
+        if let url = URL(string: "https://www.facebook.com/igor.melashchenko/") {
+              UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
-    */
-
+    
+    @IBAction func instagramButtonAction(_ sender: Any) {
+        // Open URL
+        if let url = URL(string: "https://www.instagram.com/mr_igor25/") {
+              UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func twitterButtonAction(_ sender: Any) {
+        // Open URL
+        if let url = URL(string: "https://www.twitter.com/mr_igor25") {
+              UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func githubButtonAction(_ sender: Any) {
+        // Open URL
+        if let url = URL(string: "https://www.github.com/mr-igor25") {
+              UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func youtubeButtonAction(_ sender: Any) {
+        // Open URL
+        if let url = URL(string: "https://www.youtube.com/channel/UCp3sqTC839txHNCqdBU-1Tw") {
+              UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }

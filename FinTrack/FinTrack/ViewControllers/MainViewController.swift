@@ -9,13 +9,12 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    // Outlets
     @IBOutlet var amountTextField: UITextField!
     @IBOutlet var currentBalance: UILabel!
     @IBOutlet var lastTransactionDate: UILabel!
     @IBOutlet var categorySelection: UIPickerView!
     // Current selected Categroy in UIPickerView
-    var selectedCategory: String = "Food"
+    var selectedCategory: String = "Delivery"
     @IBOutlet var selCate: UILabel!
     @IBOutlet var newExpenseButtonOutlet: UIButton!
     @IBOutlet var newIncomeButtonOutlet: UIButton!
@@ -29,6 +28,7 @@ class MainViewController: UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
+        // Show data for categorySelection
         categorySelection.dataSource = self
         categorySelection.delegate = self
     }
@@ -105,8 +105,8 @@ class MainViewController: UIViewController {
         //addTransactionToLog()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // TODO
+    @IBAction func unwindToMainViewController(segue: UIStoryboardSegue) {
+        
     }
 }
 
