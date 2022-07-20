@@ -1,8 +1,8 @@
 import Foundation
 
 class Settings {
-    static var Languages = ["English", "Русский", "Українська"]
-    static var Currencies = ["(USD) US dollar", "(EUR) Euro", "(UAH) Ukrainian hryvnia", "(RUB) Russian ruble"]
+    static var Languages = ["English", "Spanish", "French", "German", "Italian"]
+    static var Currencies = ["(USD) US dollar", "(EUR) Euro"]
     static var selectedLanguage: String = Languages[0]
     static var selectedCurrency: String = Currencies[0]
     static var theme: Theme = .deviceCurrentTheme
