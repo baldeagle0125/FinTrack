@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  FinTrack
-//
-//  Created by Igor Melashchenko on 8/27/21.
-//
-
 import UIKit
 
 class MainViewController: UIViewController {

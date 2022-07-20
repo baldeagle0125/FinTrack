@@ -89,4 +89,3 @@ extension CustomCategoryManagerViewController: UIPickerViewDelegate, UIPickerVie
         return Transaction.transactionCategories[row]
     }
 }
-

@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  FinTrack
-//
-//  Created by Igor Melashchenko on 8/27/21.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -48,4 +41,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
