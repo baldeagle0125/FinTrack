@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -176,7 +176,6 @@
 				};
 			};
 			buildConfigurationList = A3D4B47A26D92FD600CE9067 /* Build configuration list for PBXProject "FinTrack" */;
-			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -184,6 +183,7 @@
 				Base,
 			);
 			mainGroup = A3D4B47626D92FD600CE9067;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = A3D4B48026D92FD600CE9067 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -380,7 +380,7 @@
 				INFOPLIST_FILE = FinTrack/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FinTrack;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,7 +407,7 @@
 				INFOPLIST_FILE = FinTrack/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FinTrack;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
