@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8374C39D2CCE86C300B95148 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8374C39C2CCE86C100B95148 /* test.swift */; };
 		A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */; };
 		A32DCE64275BF0C900944280 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE63275BF0C900944280 /* Transaction.swift */; };
 		A359437F276611AF0078E9C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359437E276611AF0078E9C4 /* ProfileViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8374C39C2CCE86C100B95148 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryManagerViewController.swift; sourceTree = "<group>"; };
 		A32DCE63275BF0C900944280 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		A359437E276611AF0078E9C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		A35A9C9027AAEC270094BF0D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8374C39C2CCE86C100B95148 /* test.swift */,
 				A37CD583278425B200D79A64 /* AboutMeViewController.swift */,
 				A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */,
 				A3D4B48626D92FD600CE9067 /* MainViewController.swift */,
@@ -224,6 +227,7 @@
 				A359437F276611AF0078E9C4 /* ProfileViewController.swift in Sources */,
 				A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */,
 				A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */,
+				8374C39D2CCE86C300B95148 /* test.swift in Sources */,
 				A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
