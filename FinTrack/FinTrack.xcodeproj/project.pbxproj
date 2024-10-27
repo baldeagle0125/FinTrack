@@ -3,15 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8374C39D2CCE86C300B95148 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8374C39C2CCE86C100B95148 /* test.swift */; };
 		A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */; };
 		A32DCE64275BF0C900944280 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DCE63275BF0C900944280 /* Transaction.swift */; };
-		A359437F276611AF0078E9C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359437E276611AF0078E9C4 /* ProfileViewController.swift */; };
-		A37CD584278425B200D79A64 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CD583278425B200D79A64 /* AboutMeViewController.swift */; };
 		A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48226D92FD600CE9067 /* AppDelegate.swift */; };
 		A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */; };
 		A3D4B48726D92FD600CE9067 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4B48626D92FD600CE9067 /* MainViewController.swift */; };
@@ -28,11 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8374C39C2CCE86C100B95148 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryManagerViewController.swift; sourceTree = "<group>"; };
 		A32DCE63275BF0C900944280 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		A359437E276611AF0078E9C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		A37CD583278425B200D79A64 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		A3D4B47F26D92FD600CE9067 /* FinTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D4B48226D92FD600CE9067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D4B48426D92FD600CE9067 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,11 +58,8 @@
 		A35A9C9027AAEC270094BF0D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8374C39C2CCE86C100B95148 /* test.swift */,
-				A37CD583278425B200D79A64 /* AboutMeViewController.swift */,
 				A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */,
 				A3D4B48626D92FD600CE9067 /* MainViewController.swift */,
-				A359437E276611AF0078E9C4 /* ProfileViewController.swift */,
 				A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */,
 				A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */,
 			);
@@ -179,7 +170,6 @@
 				};
 			};
 			buildConfigurationList = A3D4B47A26D92FD600CE9067 /* Build configuration list for PBXProject "FinTrack" */;
-			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -187,6 +177,7 @@
 				Base,
 			);
 			mainGroup = A3D4B47626D92FD600CE9067;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = A3D4B48026D92FD600CE9067 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,17 +208,14 @@
 				A3D4B48726D92FD600CE9067 /* MainViewController.swift in Sources */,
 				A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */,
 				A32DCE64275BF0C900944280 /* Transaction.swift in Sources */,
-				A37CD584278425B200D79A64 /* AboutMeViewController.swift in Sources */,
 				A3D9C03A27AEEA7D000A38E0 /* UserSettings.swift in Sources */,
 				A3D9C04627AEF42C000A38E0 /* Stats.swift in Sources */,
 				A3D9C03C27AEEA88000A38E0 /* UserStats.swift in Sources */,
 				A3D9C03827AEEA5E000A38E0 /* UserMainData.swift in Sources */,
 				A3D9C04327AEF3AD000A38E0 /* Settings.swift in Sources */,
 				A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */,
-				A359437F276611AF0078E9C4 /* ProfileViewController.swift in Sources */,
 				A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */,
 				A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */,
-				8374C39D2CCE86C300B95148 /* test.swift in Sources */,
 				A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +372,7 @@
 				INFOPLIST_FILE = FinTrack/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FinTrack;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,7 +399,7 @@
 				INFOPLIST_FILE = FinTrack/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FinTrack;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
