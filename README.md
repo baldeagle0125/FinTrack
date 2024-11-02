@@ -2,7 +2,7 @@
 Track your money flow flawlessly!
 
 Features:
-- Track your deposits/withdrawals with ease!
+- Track your income/expenses with ease!
 
 App photos:
 
