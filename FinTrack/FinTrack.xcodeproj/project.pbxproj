@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,10 +47,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		A3D4B47C26D92FD600CE9067 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -147,8 +145,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = FinTrack;
 			productName = FinTrack;
 			productReference = A3D4B47F26D92FD600CE9067 /* FinTrack.app */;
@@ -162,7 +158,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					A3D4B47E26D92FD600CE9067 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -177,7 +173,7 @@
 				Base,
 			);
 			mainGroup = A3D4B47626D92FD600CE9067;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = A3D4B48026D92FD600CE9067 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,20 +186,17 @@
 /* Begin PBXResourcesBuildPhase section */
 		A3D4B47D26D92FD600CE9067 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				A3D4B48F26D92FD900CE9067 /* LaunchScreen.storyboard in Resources */,
 				A3D4B48C26D92FD900CE9067 /* Assets.xcassets in Resources */,
 				A3D4B48A26D92FD600CE9067 /* Main.storyboard in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3D4B47B26D92FD600CE9067 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				A3D4B48726D92FD600CE9067 /* MainViewController.swift in Sources */,
 				A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */,
@@ -218,7 +211,6 @@
 				A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */,
 				A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -242,7 +234,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A3D4B49126D92FD900CE9067 /* Debug */ = {
+		A3D4B49126D92FD900CE9067 /* Debug configuration for PBXProject "FinTrack" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,6 +270,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = NKHSTCPV2C;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -300,12 +293,13 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		A3D4B49226D92FD900CE9067 /* Release */ = {
+		A3D4B49226D92FD900CE9067 /* Release configuration for PBXProject "FinTrack" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -341,6 +335,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = NKHSTCPV2C;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -356,23 +351,23 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		A3D4B49426D92FD900CE9067 /* Debug */ = {
+		A3D4B49426D92FD900CE9067 /* Debug configuration for PBXNativeTarget "FinTrack" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NKHSTCPV2C;
 				INFOPLIST_FILE = FinTrack/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FinTrack;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,17 +384,16 @@
 			};
 			name = Debug;
 		};
-		A3D4B49526D92FD900CE9067 /* Release */ = {
+		A3D4B49526D92FD900CE9067 /* Release configuration for PBXNativeTarget "FinTrack" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NKHSTCPV2C;
 				INFOPLIST_FILE = FinTrack/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FinTrack;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,19 +416,17 @@
 		A3D4B47A26D92FD600CE9067 /* Build configuration list for PBXProject "FinTrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3D4B49126D92FD900CE9067 /* Debug */,
-				A3D4B49226D92FD900CE9067 /* Release */,
+				A3D4B49126D92FD900CE9067 /* Debug configuration for PBXProject "FinTrack" */,
+				A3D4B49226D92FD900CE9067 /* Release configuration for PBXProject "FinTrack" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		A3D4B49326D92FD900CE9067 /* Build configuration list for PBXNativeTarget "FinTrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3D4B49426D92FD900CE9067 /* Debug */,
-				A3D4B49526D92FD900CE9067 /* Release */,
+				A3D4B49426D92FD900CE9067 /* Debug configuration for PBXNativeTarget "FinTrack" */,
+				A3D4B49526D92FD900CE9067 /* Release configuration for PBXNativeTarget "FinTrack" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
